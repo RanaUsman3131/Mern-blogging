@@ -1,0 +1,12 @@
+
+li{
+    list-style: none;
+    width: 10%;
+    padding:10px ;
+    color:white;
+    display: inline-block;
+
+}
+ul li a{
+    color: white;
+}
