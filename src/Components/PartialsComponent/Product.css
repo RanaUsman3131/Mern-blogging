@@ -1,0 +1,18 @@
+.MuiFormControl-root{
+    width: 100%;
+}
+.search-result{
+    color: #888585;
+}
+.search-result .result-fig{
+    position: relative;
+    top:6px;
+}
+
+.search-result .result-no{
+    position: relative;
+    top: -7px;
+}
+.search-bar-box{
+    margin: 20px 0;
+}

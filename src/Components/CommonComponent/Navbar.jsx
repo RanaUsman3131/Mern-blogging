@@ -5,7 +5,11 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Badge from '@material-ui/core/Badge';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import HomeIcon from '@material-ui/icons/Home';
 import { useHistory,Link } from 'react-router-dom';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import DeveloperModeIcon from '@material-ui/icons/DeveloperMode';
 import './Navbar.css';
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -32,15 +36,22 @@ export default function Navbar() {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-           <Link to='/' className="logo-name">MERN STACK STORE</Link> 
+           <Link to='/' className="logo-name">
+           <DeveloperModeIcon/>
+           MERN STACK STORE</Link> 
           </Typography>
-          <Button color="inherit" onClick={()=> homeRouter('/')}>HOME</Button>
-          <Button color="inherit" onClick={()=> homeRouter('/Cart')}>
+          <Button color="inherit" onClick={()=> homeRouter('/')}>
+          <HomeIcon/>
+           HOME</Button>
+          <Button color="inherit" onClick={()=> homeRouter('/cart')}>
           <Badge badgeContent={4} color="secondary">
-             Cart
+           <ShoppingCartIcon/>
+              Cart
             </Badge>
           </Button>
-
+          <Button color="inherit">
+          <FavoriteIcon/>
+           Wish </Button>
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>

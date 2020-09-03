@@ -1,10 +1,10 @@
 import React from 'react'
-
+import Product from '../PartialsComponent/Products';
 const Home=()=> {
     return (
-        <div>
-            <h1>usman</h1>
-        </div>
+        <React.Fragment>
+            <Product/>
+        </React.Fragment>
     )
 }
 
