@@ -35,7 +35,7 @@ export default function Navbar() {
            <Link to='/' className="logo-name">MERN STACK STORE</Link> 
           </Typography>
           <Button color="inherit" onClick={()=> homeRouter('/')}>HOME</Button>
-          <Button color="inherit">
+          <Button color="inherit" onClick={()=> homeRouter('/Cart')}>
           <Badge badgeContent={4} color="secondary">
              Cart
             </Badge>
