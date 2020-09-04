@@ -3,7 +3,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography';
 import './Footer.css';
 export default function Footer() {
-    const[currentDate,setCurrentDate]=useState(new Date().getFullYear());
+    const[currentDate]=useState(new Date().getFullYear());
     return (
         <React.Fragment>
         <AppBar position="static">

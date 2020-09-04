@@ -1,1 +1,1 @@
-export {productList} from './Product/ProductActions';
+export {productDetailModalToggle} from './Product/ProductActions';

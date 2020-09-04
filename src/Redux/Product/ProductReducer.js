@@ -1,16 +1,16 @@
 
 
 const  INITIAL_STATE = {
-    productLists:"test"
+    productDetailModal:false
 };
  
 const reduce = (state = INITIAL_STATE, action) => {
     
     switch (action.type) {
-        case "productList":
+        case "productDetailModalToggle":
             return {
                 ...state,
-                productLists:action.payLoad
+                productDetailModal:!state.productDetailModal
             }
         default:
             return state;

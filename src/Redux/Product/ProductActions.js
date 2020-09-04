@@ -1,13 +1,13 @@
 
 
-const productList=(data)=>{
+
+
+const productDetailModalToggle=()=>{
   
     return{
-        type:"productList",
-        payLoad:data
+        type:"productDetailModalToggle",
+      
     }
 }
 
-
-
-export {productList};
+export {productDetailModalToggle};

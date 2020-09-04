@@ -6,14 +6,15 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
-
+import ProductDetail from './ProductDetail';
+import Tooltip from '@material-ui/core/Tooltip';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
-
-
+import {productDetailModalToggle} from '../../Redux';
+import AddShoppingCartRoundedIcon from '@material-ui/icons/AddShoppingCartRounded';
+import {connect} from 'react-redux';
 const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
@@ -31,9 +32,9 @@ const useStyles = makeStyles((theme) =>
   }),
 );
 
-const  ProductCart=()=> {
+const  ProductCart=(props)=> {
   const classes = useStyles();
- 
+  
   return (
     <Card className={classes.root}>
         <CardHeader title="Shrimp and Chorizo Paella"  subheader="September 14, 2016"/>
@@ -45,15 +46,33 @@ const  ProductCart=()=> {
             </Typography>
         </CardContent>
         <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                <FavoriteIcon />
+                <IconButton aria-label="share" onClick={props.productDetailModalToggle}>
+                  <Tooltip title="Add To Cart">
+                   <AddShoppingCartRoundedIcon />
+                  </Tooltip>
                 </IconButton>
-                <IconButton aria-label="share">
-                <ShareIcon />
+                <IconButton aria-label="add to favorites">
+                  <Tooltip title="Add To Wish List">
+                   <FavoriteIcon />
+                  </Tooltip>
                 </IconButton>
         </CardActions>
+        <ProductDetail/>
     </Card>
   );
 }
+const mapStatetoProps=state=>{
+    
+    return{
+        productDetailModal:state.productDetailModal
+    }
+}
 
-export default ProductCart;
+const mapDispatchtoProps=dispatch=>{
+    return{
+        productDetailModalToggle:function(){
+                dispatch(productDetailModalToggle());
+        }
+    }
+}
+export default  connect(mapStatetoProps,mapDispatchtoProps)(ProductCart);

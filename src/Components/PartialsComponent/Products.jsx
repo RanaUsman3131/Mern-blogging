@@ -5,17 +5,13 @@ import ProductCart from './ProductCart';
 import TextField from '@material-ui/core/TextField';
 import SearchIcon from '@material-ui/icons/Search';
 import './Product.css';
-import {productList} from '../../Redux'
-import {connect} from 'react-redux';
+
 
 const Product = (props) => {
     
     return (
     <React.Fragment>
         <Container>
-        <button onClick={()=>props.productFun('change name')}>click</button>
-        <h1>{props.product}</h1>
-      
         <div className="search-bar-box">
             <Grid container spacing={1} alignItems="flex-end">
                 <Grid item>
@@ -30,28 +26,17 @@ const Product = (props) => {
             </Grid>
         </div>
          <Grid container>
+         
                 <Grid item md={4}>
                     <ProductCart/>
                 </Grid>
+    
          </Grid>
         </Container>
     </React.Fragment>
     );
 }
  
-const mapStatetoProps=state=>{
-    
-    return{
-        product:state.productLists
-    }
-}
 
-const mapDispatchtoProps=dispatch=>{
-    return{
-        productFun:(data)=>{
-                dispatch(productList(data));
-        }
-    }
-}
  
-export default connect(mapStatetoProps,mapDispatchtoProps)(Product);
+export default Product;
