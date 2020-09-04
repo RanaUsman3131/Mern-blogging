@@ -40,7 +40,7 @@ const Product = (props) => {
 }
  
 const mapStatetoProps=state=>{
-    console.log(state);
+    
     return{
         product:state.productLists
     }

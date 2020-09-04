@@ -5,7 +5,7 @@ const  INITIAL_STATE = {
 };
  
 const reduce = (state = INITIAL_STATE, action) => {
-    console.log(action);
+    
     switch (action.type) {
         case "productList":
             return {
