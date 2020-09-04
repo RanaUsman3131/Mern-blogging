@@ -6,13 +6,13 @@ import Navbar from './Components/CommonComponent/Navbar';
 import Router from './Router/Router';
 const App=()=>{
   return (
-        <div>
+      
           <BrowserRouter>
               <Navbar/>
               <Router/>  
               <Footer/>  
           </BrowserRouter>
-        </div>
+       
   );
 }
 
